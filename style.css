@@ -1,0 +1,161 @@
+:root {
+  /*Primary*/
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: rgb(0, 66, 65);
+
+  /*Neutral*/
+
+  /*Paragraphs*/
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  /*Background, headings, buttons*/
+  --very-light-gray: hsl(0, 0%, 95%);
+
+  /*Fonts*/
+  --lexend-deca: Lexend Deca;
+  --big-shoulders-display: Big Shoulders Display;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--transparent-white);
+  font-size: 15px;
+  background-color: var(--very-light-gray);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: var(--big-shoulders-display);
+}
+p,
+a {
+  font-family: var(--lexend-deca);
+}
+
+.card__deck {
+  display: grid;
+}
+
+h1,
+p {
+  padding: 13px 0;
+}
+
+h1 {
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  margin-top: 18px;
+}
+
+p {
+  line-height: 1.5rem;
+}
+button {
+  border: transparent;
+  padding: 16px 40px;
+  border-radius: 40px;
+  background-color: white;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: transparent;
+  padding: 14px 38px;
+  cursor: pointer;
+  color: white;
+  border: white 2px solid;
+}
+.card {
+  margin: 0;
+  width: 305px;
+}
+
+.card__orange {
+  background-color: var(--bright-orange);
+  margin-top: 23%;
+}
+
+.button__orange {
+  color: var(--bright-orange);
+}
+.card__light {
+  background-color: var(--dark-cyan);
+}
+
+.button__light {
+  color: var(--dark-cyan);
+}
+.card__dark {
+  background-color: var(--very-dark-cyan);
+  margin-bottom: 15%;
+}
+
+.button__dark {
+  color: var(--very-dark-cyan);
+}
+.card__content {
+  padding: 3rem;
+}
+
+/*svg animation*/
+#vehicle__0,
+#vehicle__1 {
+  transition: all 1s ease;
+}
+
+#vehicle__0 {
+  transform: translateX(-100%);
+
+  opacity: 50;
+}
+
+svg:hover #vehicle__1 {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+svg:hover #vehicle__0 {
+  transform: translateX(0%);
+}
+
+svg:hover #vehicle__1 {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+@media (min-width: 920px) {
+  main {
+    height: 100vh;
+  }
+
+  .card__deck {
+    grid-template-columns: repeat(3, 305px);
+    margin: 12% 18%;
+  }
+
+  .card {
+    margin: 0;
+  }
+
+  button {
+    margin-top: 4.6rem;
+  }
+  .card__orange {
+    margin-top: 0;
+  }
+
+  .card__dark {
+    margin-bottom: 0;
+  }
+}
